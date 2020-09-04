@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<carCollection>
+    <car>
+        <model>Corolla</model>
+        <category>Wagon</category>
+        <availability>Yes</availability>
+        <brand>Toyota</brand> 
+        <modelYear>2014</modelYear>
+        <mileage>15987</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>120</pricePerDay>
+        <description>Fast and silence</description>
+    </car>
+    <car>
+        <model>RAV4</model>
+        <category>SUV</category>
+        <availability>Yes</availability>
+        <brand>Toyota</brand>
+        <modelYear>2015</modelYear>
+        <mileage>20015</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>160</pricePerDay>
+        <description>Large car</description>
+    </car>
+    <car>
+        <model>Pajero</model>
+        <category>SUV</category>
+        <availability>No</availability>
+        <brand>Mitsubish</brand>
+        <modelYear>2014</modelYear>
+        <mileage>16880</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>7</seat>
+        <pricePerDay>180</pricePerDay>
+        <description>Laxury car</description>
+    </car>
+    <car>
+        <model>Yaris</model>
+        <category>Sedan</category>
+        <availability>Yes</availability>
+        <brand>Toyota</brand>
+        <modelYear>2013</modelYear>
+        <mileage>32546</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>4</seat>
+        <pricePerDay>90</pricePerDay>
+        <description>Cheapest car</description>
+    </car>
+    <car>
+        <model>SV6</model>
+        <category>Wagon</category>
+        <availability>Yes</availability>
+        <brand>Honda</brand>
+        <modelYear>2015</modelYear>
+        <mileage>13201</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>110</pricePerDay>
+        <description>Honda Wagon</description>
+    </car>
+    <car>
+        <model>G9</model>
+        <category>Wagon</category>
+        <availability>No</availability>
+        <brand>Kia</brand>
+        <modelYear>2016</modelYear>
+        <mileage>11005</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>135</pricePerDay>
+        <description>Kia Wagon</description>
+    </car>
+    <car>
+        <model>Swift</model>
+        <category>Sedan</category>
+        <availability>Yes</availability>
+        <brand>Suzuki</brand>
+        <modelYear>2014</modelYear>
+        <mileage>17465</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>95</pricePerDay>
+        <description>Suzuki Sedan</description>
+    </car>
+    <car>
+        <model>Fabia</model>
+        <category>Sedan</category>
+        <availability>Yes</availability>
+        <brand>Skoda</brand>
+        <modelYear>2015</modelYear>
+        <mileage>14653</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>110</pricePerDay>
+        <description>Skoda Sedon</description>
+    </car>
+    <car>
+        <model>Carnival</model>
+        <category>SUV</category>
+        <availability>Yes</availability>
+        <brand>Kia</brand>
+        <modelYear>2016</modelYear>
+        <mileage>16845</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>8</seat>
+        <pricePerDay>195</pricePerDay>
+        <description>Super large car</description>
+    </car>
+    <car>
+        <model>Kluger</model>
+        <category>SUV</category>
+        <availability>Yes</availability>
+        <brand>Toyota</brand>
+        <modelYear>2015</modelYear>
+        <mileage>21568</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>7</seat>
+        <pricePerDay>185</pricePerDay>
+        <description>Toyota SUV</description>
+    </car>
+     <car>
+        <model>Q2</model>
+        <category>Wagon</category>
+        <availability>No</availability>
+        <brand>Audi</brand>
+        <modelYear>2016</modelYear>
+        <mileage>22542</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>5</seat>
+        <pricePerDay>145</pricePerDay>
+        <description>Audi Wagon</description>
+    </car>
+     <car>
+        <model>Mustang</model>
+        <category>Sedan</category>
+        <availability>Yes</availability>
+        <brand>Ford</brand>
+        <modelYear>2016</modelYear>
+        <mileage>12453</mileage>
+        <fuelType>petrol</fuelType>
+        <seat>2</seat>
+        <pricePerDay>100</pricePerDay>
+        <description>Small Sedan</description>
+    </car>
+</carCollection>

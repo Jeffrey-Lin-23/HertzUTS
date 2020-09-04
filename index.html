@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental</title>
+     <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <style type="text/css">
+        .cardisplay{
+            position: absolute;
+            color: white;
+            border: 2px ridge ghostwhite;
+            width: 260px;
+            margin-right: 40px;
+        }
+        img{
+            margin: auto;
+        }
+        .info{
+            color: black;
+            margin: auto;
+            text-align:center;
+            width: 100%;
+        }
+        .info tr td{
+            width: 50%;
+        }
+        
+        .myButton{
+            margin: 10px;
+        }
+        
+    </style>
+    
+</head>
+    
+<body onload="extraData();">
+    <table width="100%" height="70" bgcolor="black">
+    <td>
+        <div style="position:absolute;top: 0px;left: 10px;"><a href="index.html"><img src="image/Logo-01.png" width="180" height="90"></a></div>
+        <div  style="color: white;position:absolute;top: 0px;left: 600px;">
+            <h1 style="color: white;">Car Rental Center</h1>
+        </div>
+    </td>
+    <td>
+        <div align="right" style="color: white; ">
+            <button align="right" style="color: white" class="myButton" onclick="goCart()">Car Reservation</button>
+        </div>
+    </td>
+</table>
+
+    <div id="display" style=" margin: auto; position: relative; background-color: white;width:1200px;height: 1500px;"  ></div>
+    
+</body>
+    
+    <script type="text/javascript">
+        //use ajax to load the xml and display the car information
+        function extraData(){
+             var xhttp = new XMLHttpRequest();
+             var car,cars;
+             var car_list =[];
+             var txt='';
+             var model,category,availability,brand,modelYear,mileage,fuelType,seat,pricePerDay,description;
+             var title =["Model","Category","Availability","Brand","Model Year","Mileage","Fuel Type","Seat","Price Per Day","Description"]; 
+             xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200)
+                {
+                   cars = xhttp.responseXML.documentElement.getElementsByTagName("car");
+                    for (var i = 0; i < cars.length; i++) {
+                        model = cars[i].getElementsByTagName("model")[0].childNodes[0].nodeValue;
+                        category = cars[i].getElementsByTagName("category")[0].childNodes[0].nodeValue;
+                        availability = cars[i].getElementsByTagName("availability")[0].childNodes[0].nodeValue;
+                        brand = cars[i].getElementsByTagName("brand")[0].childNodes[0].nodeValue;
+                        modelYear = cars[i].getElementsByTagName("modelYear")[0].childNodes[0].nodeValue;
+                        mileage = cars[i].getElementsByTagName("mileage")[0].childNodes[0].nodeValue;
+                        fuelType = cars[i].getElementsByTagName("fuelType")[0].childNodes[0].nodeValue;
+                        seat = cars[i].getElementsByTagName("seat")[0].childNodes[0].nodeValue;
+                        pricePerDay = cars[i].getElementsByTagName("pricePerDay")[0].childNodes[0].nodeValue;
+                        description = cars[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                        
+                        car = [model, category,availability,brand,modelYear,mileage,fuelType,seat,pricePerDay,description];
+                        car_list.push(car);
+                        
+                    }
+                    
+                    for(var j=0;j<car_list.length;j++){
+                        if(j<4){
+                          txt = txt+'<div align="center" class="cardisplay" style="top:10px;left:'+j*300+'px;">';  
+                        }else if(j<8){
+                          txt = txt+'<div align="center" class="cardisplay" style="top:485px;left:';
+                          var k = j-4;
+                          txt = txt+k*300+'px;">';
+                        }else{
+                          txt = txt+'<div align="center" class="cardisplay" style="top:960px;left:';
+                          var k = j-8;
+                          txt = txt+k*300+'px;">';
+                        }
+                        
+                        var imgurl=car_list[j][0]+'.jpg';
+                        txt = txt + '<img src="image/'+imgurl+'" width="230" height="170" style="margin-top:10px;">';
+                        
+                        txt = txt + '<table class="info">';
+                        for(var l=0;l<title.length;l++){
+                            
+                            txt = txt + '<tr><td>'+title[l]+'</td>';
+                            txt = txt + '<td>'+car_list[j][l]+'</td></tr>';
+                            
+                        }
+                        txt = txt + '</table>';
+                        txt = txt +'<button class="myButton" onclick="addCart('+j+');">Add to chart</button>';
+                        
+                        txt = txt + '</div>';
+                        
+                    }
+                    
+                    document.getElementById('display').innerHTML = txt;
+                }
+            };
+            xhttp.open("GET","cars.xml",true);
+            xhttp.send();
+        }
+        
+        //when add the car to shopping cart,check the availability via ajax.
+        function addCart(num){
+            var xhttp = new XMLHttpRequest();
+             xhttp.onreadystatechange = function () {
+                 
+                if(this.readyState == 4 && this.status == 200)
+                    {
+                        cars = xhttp.responseXML.documentElement.getElementsByTagName("car");
+                        availability = cars[num].getElementsByTagName("availability")[0].childNodes[0].nodeValue;
+                        
+                        if (availability=="Yes") {
+                            alert("Add to the car successfully.");
+                            window.location.href='addCart.php?number='+num;
+                            return true;
+                        }
+                        else
+                        {
+                            alert("Sorry,this car is not available.");
+                        }
+
+                    }
+             }
+            xhttp.open("GET","cars.xml",true);
+            xhttp.send();
+        }
+        
+        
+        function goCart() {
+            window.location.href='shoppingCart.php';
+        }
+    
+    
+    
+    </script>
+</html>
